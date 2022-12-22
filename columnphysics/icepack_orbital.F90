@@ -67,7 +67,7 @@
       iyear_AD  = 1950
       log_print = .false.   ! if true, write out orbital parameters
 
-#ifndef CESMCOUPLED
+#ifndef CCSMCOUPLED
       call icepack_orb_params( iyear_AD, eccen , obliq , mvelp    , &
                                obliqr  , lambm0, mvelpp, log_print)
       if (icepack_warnings_aborted(subname)) return
@@ -147,7 +147,7 @@
                                  days_per_year, nextsw_cday, &
                                  calendar_type)
 
-#ifdef CESMCOUPLED
+#ifdef CCSMCOUPLED
       use shr_orb_mod, only: shr_orb_decl
 #endif
 
@@ -181,7 +181,7 @@
 
 ! Solar declination for next time step
 
-#ifdef CESMCOUPLED
+#ifdef CCSMCOUPLED
       if (calendar_type == "GREGORIAN") then
          ydayp1 = min(nextsw_cday, real(days_per_year,kind=dbl_kind))
       else
