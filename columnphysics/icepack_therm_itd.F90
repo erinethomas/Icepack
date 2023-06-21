@@ -1996,11 +1996,13 @@
 
       integer (kind=int_kind), intent(in) :: &
          ncat     , & ! number of thickness categories
-         nfsd     , & ! number of floe size categories
          nltrcr   , & ! number of zbgc tracers
          nblyr    , & ! number of bio layers
          nilyr    , & ! number of ice layers
          nslyr        ! number of snow layers
+      
+      integer (kind=int_kind), optional, intent(in) :: &
+         nfsd        ! number of floe size categories
 
       logical (kind=log_kind), intent(in) :: &
          update_ocn_f     ! if true, update fresh water and salt fluxes
@@ -2014,17 +2016,19 @@
          sss      , & ! sea surface salinity (ppt)
          rside    , & ! fraction of ice that melts laterally
          fside    , & ! lateral heat flux (W/m^2)
-         frzmlt   , & ! freezing/melting potential (W/m^2)
+         frzmlt   ! freezing/melting potential (W/m^2)
+      
+      real (kind=dbl_kind), optional, intent(in) :: &
          wave_sig_ht ! significant height of waves in ice (m)
 
-      real (kind=dbl_kind), dimension(:), intent(in)  :: &
+      real (kind=dbl_kind), dimension(:), optional, intent(in)  :: &
          wave_spectrum  ! ocean surface wave spectrum E(f) (m^2 s)
 
-      real(kind=dbl_kind), dimension(:), intent(in) :: &
+      real(kind=dbl_kind), dimension(:), optional, intent(in) :: &
          wavefreq,              & ! wave frequencies (s^-1)
          dwavefreq                ! wave frequency bin widths (s^-1)
 
-      real (kind=dbl_kind), dimension (:), intent(in) :: &
+      real (kind=dbl_kind), dimension (:), optional, intent(in) :: &
          floe_rad_c     , & ! fsd size bin centre in m (radius)
          floe_binwidth      ! fsd size bin width in m (radius)
 
@@ -2080,7 +2084,7 @@
       logical (kind=log_kind), dimension(:), intent(inout) :: &
          first_ice      ! true until ice forms
 
-      real (kind=dbl_kind), dimension(:), intent(out) :: &
+      real (kind=dbl_kind), dimension(:), optional, intent(out) :: &
                             ! change in floe size distribution (area)
          d_afsd_latg    , & ! due to fsd lateral growth
          d_afsd_newi    , & ! new ice formation
