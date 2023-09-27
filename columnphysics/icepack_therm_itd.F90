@@ -2007,7 +2007,7 @@
                                      d_afsd_latm,  d_afsd_weld,   &
                                      floe_rad_c,   floe_binwidth)
 
-      use icepack_parameters, only: icepack_init_parameters
+      use icepack_parameters, only: icepack_init_parameters, wave_spec
 
       integer (kind=int_kind), intent(in) :: &
          ncat     , & ! number of thickness categories
