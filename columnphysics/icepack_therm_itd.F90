@@ -2156,10 +2156,10 @@
           if (tr_fsd) then
              if (.not.(present(nfsd)          .and. &
                        present(wlat)          .and. &
-                       present(wave_sig_ht)   .and. &
-                       present(wave_spectrum) .and. &
-                       present(wavefreq)      .and. &
-                       present(dwavefreq)     .and. &
+                      ! present(wave_sig_ht)   .and. &
+                      ! present(wave_spectrum) .and. &
+                      ! present(wavefreq)      .and. &
+                      ! present(dwavefreq)     .and. &
                        present(d_afsd_latg)   .and. &
                        present(d_afsd_newi)   .and. &
                        present(d_afsd_latm)   .and. &
