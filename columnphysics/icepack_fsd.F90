@@ -632,14 +632,16 @@
       real (kind=dbl_kind), intent(in) :: &
          dt         , & ! time step (s)
          ai0new     , & ! area of new ice added to cat 1
-         G_radial   , & ! lateral melt rate (m/s)
+         G_radial       ! lateral melt rate (m/s)
+      
+      real (kind=dbl_kind), intent(in), optional :: &
          wave_sig_ht    ! wave significant height (everywhere) (m)
 
-      real (kind=dbl_kind), dimension(:), intent(in)  :: &
+      real (kind=dbl_kind), dimension(:), intent(in), optional  :: &
          wave_spectrum  ! ocean surface wave spectrum as a function of frequency
                         ! power spectral density of surface elevation, E(f) (units m^2 s)
 
-      real(kind=dbl_kind), dimension(:), intent(in) :: &
+      real(kind=dbl_kind), dimension(:), intent(in), optional :: &
          wavefreq   , & ! wave frequencies (s^-1)
          dwavefreq      ! wave frequency bin widths (s^-1)
 
