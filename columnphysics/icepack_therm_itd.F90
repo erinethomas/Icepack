@@ -1211,7 +1211,6 @@
                               wave_sig_ht,           &
                               wave_spectrum,         &
                               wavefreq,              &
-                              dwavefreq,             &
                               d_afsd_latg,           &
                               d_afsd_newi)
 
@@ -1284,8 +1283,7 @@
          wave_spectrum  ! ocean surface wave spectrum, E(f) (m^2 s)
 
       real(kind=dbl_kind), dimension(:), intent(in), optional :: &
-         wavefreq,              & ! wave frequencies (s^-1)
-         dwavefreq                ! wave frequency bin widths (s^-1)
+         wavefreq       ! wave frequencies (s^-1)
 
       real (kind=dbl_kind), dimension(:), intent(out), optional :: &
                             ! change in thickness distribution (area)
@@ -1715,7 +1713,6 @@
                                   wave_sig_ht,               &
                                   wave_spectrum,             &
                                   wavefreq,                  &
-                                  dwavefreq,                 &
                                   d_afsd_latg,               &
                                   d_afsd_newi,               &
                                   afsdn,      aicen_init,    &
@@ -1869,7 +1866,6 @@
                                      wave_sig_ht,                 &
                                      wave_spectrum,               &
                                      wavefreq,                    &
-                                     dwavefreq,                   &
                                      d_afsd_latg,  d_afsd_newi,   &
                                      d_afsd_latm,  d_afsd_weld)
 
@@ -1958,8 +1954,7 @@
          wave_spectrum  ! ocean surface wave spectrum E(f) (m^2 s)
 
       real(kind=dbl_kind), dimension(:), intent(in), optional :: &
-         wavefreq, &    ! wave frequencies (s^-1)
-         dwavefreq      ! wave frequency bin widths (s^-1)
+         wavefreq       ! wave frequencies (s^-1)
 
       real (kind=dbl_kind), dimension(:), intent(out), optional :: &
                         ! change in floe size distribution (area)
@@ -2000,7 +1995,6 @@
                        present(wave_sig_ht)   .and. &
                        present(wave_spectrum) .and. &
                        present(wavefreq)      .and. &
-                       present(dwavefreq)     .and. &
                        present(d_afsd_latg)   .and. &
                        present(d_afsd_newi)   .and. &
                        present(d_afsd_latm)   .and. &
@@ -2087,8 +2081,7 @@
                            HDO_ocn,       H2_16O_ocn,   &
                            H2_18O_ocn,                  &
                            wave_sig_ht,                 &
-                           wave_spectrum,               &
-                           wavefreq,      dwavefreq,    &
+                           wave_spectrum, wavefreq,     &
                            d_afsd_latg,   d_afsd_newi)
 
          if (icepack_warnings_aborted(subname)) return
